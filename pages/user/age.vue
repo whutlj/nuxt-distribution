@@ -5,6 +5,7 @@
       class="btn" 
       @click="changeName">改变</div>
     {{ ayncDataName }}
+    <el-button @click="getSourceType">调用接口</el-button>
     <img 
       src="~assets/img/received.png"
       class="img" 
@@ -13,6 +14,7 @@
 </template>
 <script>
 import moment from 'moment'
+import { getType } from '@/assets/js/api'
 export default {
   name: 'Age',
   transition: '',
@@ -55,6 +57,16 @@ export default {
   methods: {
     changeName() {
       this.ayncDataName = 'setName'
+    },
+    getSourceType() {
+      // this.$axios
+      //   .get(`/xdnphb/knowledgepay/v1/api/distribution/getType`)
+      //   .then(res => {
+      //     console.log(res)
+      //   })
+      getType().then(res => {
+        console.log(res)
+      })
     }
   }
 }

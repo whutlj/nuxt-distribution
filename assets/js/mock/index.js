@@ -1,9 +1,5 @@
 import Mock from 'mockjs'
 
-// 配置拦截AJAX请求行为，设置响应时间
-Mock.setup({
-  timeout: '1000-3000'
-})
 const data = () =>
   Mock.mock({
     'list|2-5': [
